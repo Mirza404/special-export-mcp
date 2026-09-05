@@ -24,6 +24,8 @@ dev = [
     "hypothesis>=6.100",
     "types-requests",
     "types-defusedxml",
+    "pip-audit>=2.7",
+    "build>=1.2",
 ]
 
 [project.urls]
