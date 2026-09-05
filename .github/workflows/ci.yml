@@ -27,7 +27,7 @@ jobs:
           - name: Typecheck
             run: mypy special_export_mcp
           - name: Dependency Audit
-            run: pip-audit --strict
+            run: pip-audit --strict .
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-deps
