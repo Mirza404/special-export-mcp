@@ -1,0 +1,498 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Wikipedia</sitename>
+    <dbname>enwiki</dbname>
+    <base>https://en.wikipedia.org/wiki/Main_Page</base>
+    <generator>MediaWiki 1.47.0-wmf.18</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Wikipedia</namespace>
+      <namespace key="5" case="first-letter">Wikipedia talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="100" case="first-letter">Portal</namespace>
+      <namespace key="101" case="first-letter">Portal talk</namespace>
+      <namespace key="118" case="first-letter">Draft</namespace>
+      <namespace key="119" case="first-letter">Draft talk</namespace>
+      <namespace key="126" case="first-letter">MOS</namespace>
+      <namespace key="127" case="first-letter">MOS talk</namespace>
+      <namespace key="710" case="first-letter">TimedText</namespace>
+      <namespace key="711" case="first-letter">TimedText talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="1728" case="first-letter">Event</namespace>
+      <namespace key="1729" case="first-letter">Event talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Volkswagen Golf Mk4</title>
+    <ns>0</ns>
+    <id>8348989</id>
+    <revision>
+      <id>1368569344</id>
+      <parentid>1368217695</parentid>
+      <timestamp>2026-08-09T21:32:09Z</timestamp>
+      <contributor>
+        <username>SoshingekiGoji</username>
+        <id>45192756</id>
+      </contributor>
+      <origin>1368569344</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="42142" sha1="jmu41j7undvwff05slt6c9wwk7byqys" xml:space="preserve">{{Short description|Fourth generation of Golf compact car}}
+{{more citations needed|date=September 2021}}
+{{Infobox automobile
+| name = Volkswagen Golf Mk4 (1J)
+| image = 2003 Volkswagen Golf Match - 1390cc 1.4 (75PS) Petrol - Reflex Silver - 02-2025, Front.jpg
+| caption = 
+| manufacturer = [[Volkswagen]]
+| aka = VW Bora HS (China, 2006–2008)&lt;br /&gt;VW City Golf (Canada, 2007–2010)&lt;br /&gt;VW Golf Town (2009–2010)
+| production = October 1997–2006 (Europe)&lt;br /&gt;1999–2014 (Brazil)&lt;br /&gt;2003–2010 (China)
+| assembly = {{ubl ||Germany: [[Wolfsburg]] |Germany: [[Zwickau]] ([[Volkswagen Zwickau-Mosel Plant]])&lt;ref&gt;{{cite web|url=https://www.volkswagen-newsroom.com/en/stories/car-city-zwickau-from-horch-to-e-mobility-4375|title=Car city Zwickau: From Horch to e-mobility|publisher=volkswagen-newsroom.com|date=2019-10-28|access-date=2022-11-23|archive-date=2022-11-23|archive-url=https://web.archive.org/web/20221123101237/https://www.volkswagen-newsroom.com/en/stories/car-city-zwickau-from-horch-to-e-mobility-4375|url-status=dead}}&lt;/ref&gt;|Brazil: [[São José dos Pinhais]] ([[Volkswagen do Brasil]]) |Mexico: [[Puebla (city)|Puebla]] ([[Volkswagen de México]]) |Belgium: [[Audi Brussels|Brussels]] |Slovakia: [[Bratislava]] |Bosnia and Herzegovina: [[Sarajevo]] ([[Volkswagen Sarajevo]]) |South Africa: [[Uitenhage]] |China: [[Changchun]]}}
+| designer = [[Peter Schreyer]]&lt;ref&gt;{{cite web|last1=Bremer|first1=Richard|title=Meeting Peter Schreyer - the man behind Kia's tiger nose grille|url=https://www.autocar.co.uk/car-news/industry/meeting-peter-schreyer-man-behind-kias-tiger-nose-grille|website=[[Autocar (magazine)|Autocar]]|access-date=7 January 2018}}&lt;/ref&gt;&lt;br /&gt;Hartmut Warkuß
+| class = [[Compact car]] ([[C-segment|C]])
+| body_style = 3-door [[hatchback]]&lt;br /&gt;5-door hatchback&lt;br /&gt;5-door [[station wagon]]
+| layout = [[Front-engine, front-wheel-drive layout|Front engine, front-wheel-drive]] / [[Front-engine, four-wheel-drive layout|four-wheel-drive]]
+| platform = [[Volkswagen Group A platform#A4|Volkswagen Group A4 (PQ34) platform]]
+| related = [[Volkswagen Jetta]] Mk4 (Bora)&lt;br /&gt;[[Audi A3]] Mk1&lt;br /&gt;[[Audi TT]] Mk1&lt;br /&gt;[[Volkswagen New Beetle]]&lt;br /&gt;[[SEAT León]] Mk1&lt;br /&gt;[[SEAT Toledo]] Mk2&lt;br /&gt;[[Škoda Octavia]] Mk1
+| engine = {{ubl
+  | '''[[Petrol engine|Petrol]]:'''
+  | 1.4&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AHW|EA111]]'' [[Multi-valve|16v]] [[Straight-four engine|I4]]
+  | 1.6&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AVU|EA827]]'' I4
+  | 1.6&amp;nbsp;L ''[[List of Volkswagen Group petrol engines#AUS|EA111]]'' 16v I4
+  | 1.6&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#BAD|EA111]]'' [[Gasoline direct injection|FSI]] 16v I4
+  | 1.8&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AGN|EA113]]'' 20v I4
+  | 1.8&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#1.8 20vT|EA113]]'' 20v [[Turbocharger|turbo]] I4
+  | 2.0&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#APK|EA827]]'' I4
+  | 2.3&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AGZ|AGZ]]'' [[VR5 engine|VR5]]
+  | 2.3&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AQN|AQN]]'' 20v VR5
+  | 2.8&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AAA|EA390]]'' [[VR6 engine|VR6]]
+  | 2.8&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#AQP|EA390]]'' 24v VR6
+  | 3.2&amp;nbsp;L ''[[List of discontinued Volkswagen Group petrol engines#BML|EA390]]'' 24v VR6 (R32)
+  | '''Petrol [[Compressed natural gas|CNG]]:'''
+  | 2.0&amp;nbsp;L ''[[List of Volkswagen Group petrol engines#ATM|ATM]]'' I4
+  | '''[[Diesel engine|Diesel]]:'''
+  | 1.9&amp;nbsp;L ''[[List of discontinued Volkswagen Group diesel engines#AQM|EA180]]'' [[Suction Diesel Injection|SDI]] I4
+  | 1.9&amp;nbsp;L ''[[List of discontinued Volkswagen Group diesel engines#AGR|EA180]]'' [[Turbocharged Direct Injection|TDI]] I4 (Verteilerpumpe - VE)
+  | 1.9&amp;nbsp;L ''[[List of discontinued Volkswagen Group diesel engines#ATD|EA188]]'' TDI [[Unit injector|PD]] I4 (Pumpe Düse)
+  }}
+| transmission = [[Volkswagen 01M transmission|01M]] 4-speed [[automatic transmission|automatic]]&lt;br /&gt;[[Jatco JF506E transmission|09A]] 5-speed [[manumatic|tiptronic]] automatic&lt;br /&gt;02J 5-speed [[manual transmission|manual]]&lt;br /&gt;02M 6-speed manual&lt;br /&gt;6-speed [[Direct-Shift Gearbox|DSG - R32 only]]
+| wheelbase = {{convert|2512|mm|in|1|abbr=on}}&lt;br /&gt;R32: {{convert|2517|mm|in|1|abbr=on}}
+| length = 1998–2002 GTI/Golf: {{convert|4148|mm|in|1|abbr=on}}&lt;br /&gt;2003–2006 GTI/Golf: {{convert|4188|mm|in|1|abbr=on}}&lt;br /&gt;R32: {{convert|4176|mm|in|1|abbr=on}}&lt;br /&gt;Bora/Jetta: {{convert|4376|mm|in|1|abbr=on}}
+| width = {{convert|1735|mm|in|1|abbr=on}}
+| height = {{convert|1440|mm|in|1|abbr=on}}&lt;br /&gt;R32: {{convert|1425|mm|in|1|abbr=on}}&lt;br /&gt;City Golf: {{convert|1,445|mm|in|1|abbr=on}}
+| predecessor = [[Volkswagen Golf Mk3]]
+| successor = [[Volkswagen Golf Mk5]]
+}}
+
+The '''Volkswagen Golf Mk4'''&lt;ref&gt;{{cite book |title=Deutsche Autos seit 1990, vol.5 |last=Kittler |first=Eberhard |year= 2001 |publisher=Motorbuch Verlag |location=Stuttgart |isbn=3-613-02128-5 |pages=290–302}}&lt;/ref&gt; (or VW ''Type 1J'') is a [[compact car]], the fourth generation of the [[Volkswagen Golf]] and the successor to the [[Volkswagen Golf Mk3]]. Launched in October 1997 for the 1998 model year, it was the best-selling car in Europe in 2001 (though it slipped to second place, behind the [[Peugeot 206]], in 2002).&lt;ref name=AutoMotorundSport200221&gt;{{cite journal| title = Der böse Golf | journal = [[Auto, Motor und Sport]]| volume = Heft 21 2002| page = 188 |date = 2 October 2002}}&lt;/ref&gt;
+
+The Mk4 was a deliberate attempt to take the Volkswagen Golf series further upmarket  with a high-quality interior and higher equipment levels - a policy which Volkswagen began a year earlier with the [[Volkswagen Passat (B5)|Passat B5]].  This move however however placed the Golf in direct competition with its luxury branded stablemate - the [[Audi A3]] - with some of the higher trim versions of the Golf  actually being as expensive as the A3. 
+
+It was replaced in late 2003 for the 2004 model year by the [[Volkswagen Golf Mk5]] in European markets. However, manufacturing continued in South America and China for developing markets until 2014.
+
+==Design and engineering==
+{{Multiple image
+| align             = left
+| direction         = vertical
+| width             = 220
+| image1            = 2003 Volkswagen Golf (1J MY03) Generation 2.0 5-door hatchback (2015-07-09) 02.jpg
+| caption1         = Generation 2.0 5-door hatchback
+}}
+As with the larger [[Volkswagen Passat|Passat]], launched a year earlier, the MK4 Golf helped form a part of [[Volkswagen|Volkswagen's]] strategy of moving its products upmarket to plug a gap between mainstream economy cars and premium cars, with [[SEAT]] and [[Škoda Auto|Škoda]], two other VW Group owned marques, poised to fill the gap below the new Golf. In fact, the quality of the Golf was comparable with the [[Audi A3]],{{Citation needed|date=October 2021}} which was the first car based on this floor pan when it was launched a year earlier, but cost considerably more than most of its competitors.
+
+This generation of the Golf brought in the Haldex 4 Wheel Drive system, which was previously only available on Audi products. The system was used with the 1.9TDI Sport Engines, i.e. PD115 (then replaced by the PD130) and the PD150 Engines (Codes: AJM/ASZ/ARL) and with the VR6-powered models. This featured a totally revised rear axle and rear floor pan, which was shared with the [[Audi TT]] 8N. This went on to be used in the R32 model in 2003–2004.
+
+This version of the Golf was the only version to do away with the GTD nameplate—there were petrol and diesel versions of the GTI, which featured slightly lowered suspension, the 1.8T or the 1.9 TDI (PD 150) and premium interior features like Climatronic, full leather, and wood trims; however, it was not as sporty as the preceding generations of the GTI. As part of VW's move upmarket, the firm downplayed the sportiness of the hatchback in favour of comfort. The Mk4 GTI is looked down upon because of this,{{Citation needed|date=November 2025}} and VW restored the GTI's reputation as a sporting hatch with the 25th Anniversary Edition and the Mk5 Golf that followed it.
+
+It was also one of the first Golfs to come with xenon headlamps (optional) and rain-sensing wipers at the end of its manufacturing in Europe, and along with this, a full 12-year anti-corrosion warranty, which was rarely seen at this time.{{Citation needed|date=November 2025}}
+
+The Mk4 Golf was praised for its quality improvements, but was criticized for its handling characteristics, and was compared with the Mk1 Ford Focus of the time, which had an independent rear suspension in the 2WD models, unlike the Mk4, which had a torsion beam rear axle setup in the 2WD models.
+
+The Mk4 Golf platform remained widely used in the VW Group much after its demise in 2004 (2006 for the Bora and Variant models).
+{{clear left}}
+
+==Models==
+{{anchor|3.5|Cabrio|Cabriolet|Mk3.5}}
+
+===Golf Cabriolet===
+{{Multiple image
+| align             = left
+| direction         = vertical
+| width             = 220
+| image1            = Volkswagen Golf Mk3.5 Cabriolet - W001 (cropped).jpg
+| image2            = Volkswagen Golf Mk3.5 Cabriolet - W002 (cropped).jpg
+| caption2          = Golf Mk3.5 Cabriolet
+}}
+
+As with the [[Volkswagen Golf Mk2|Mk2 Golf]], Volkswagen did not make a convertible version of the Mk4 Golf. Instead, they facelifted the front bumper, grille, fenders, and hood of the Mk3 Golf Cabrio to resemble the styling of the Mk4 Golf (colloquially referred to as the Mk3.5). Changes to the rear included a redesigned trunk, which moved the number plate tub to a restyled rear bumper, in addition to a larger VW emblem more closely resembling the rear of a Mk4 Golf. VW incorporated other non-structural parts from the Mk4 as well, such as headlights, fender repeaters, side mirror caps, hatch handle, steering wheel airbag, etc. The interior remained largely similar to the Mk3 interior save for a Mk4 style three-spoke leather steering wheel, a textured dashboard (also known as "dimpled dash" or "shark skin dash"), heavily bolstered front seats with incorporated side airbags, and a chromed finish on several parts, such as the inner door handles, emergency brake button, door strikers, front seat-belt anchors, key lock cylinders, and shifter button in automatic transmission equipped cars. The instrument panel was updated with a relocated hazard light switch and blue and red backlighting, as found in the Mk4. Technical updates, beginning with the 2000 model, include the immobilizer and engine computer from the Mk4 Golf being retrofitted to the older Mk3 engine mechanicals.
+
+{{Clear left}}
+
+=== Variant ===
+{{Multiple image
+| align             = left
+| direction         = vertical
+| width             = 220
+| image1            = Volkswagen Golf Wagon.jpg
+| image2            = Volkswagen Golf Wagon rear.jpg
+| caption2          = Golf Mk4 Variant
+}}
+
+The Volkswagen Golf Mk4 Variant was introduced in 1999. It was discontinued in 2006, and succeeded in 2007 by the [[Volkswagen Golf Mk5]] Variant. Unlike the Mk3, it was offered in North America with the "Jetta" name with corresponding front styling. The "Jetta Wagon" was used in North America instead of the "Bora" name.
+
+{{Clear left}}
+
+=== Volkswagen Bora/Jetta Mk4 ===
+{{Main|Volkswagen Bora}}
+Volkswagen produced a saloon version of the Mk4 Golf, launched around a year later. As with previous incarnations of the Golf, it had its own identity, and this time it was called the [[Volkswagen Bora]], although the name Jetta remained in North America and South Africa. Unlike its predecessors, the Bora/Jetta featured unique rear doors, front wings and bonnet. The front doors were the only body panels it shared with the Golf. The interior, though, was almost identical to the Golf, featuring very minor styling changes like its predecessor.
+[[File:Volkswagen Jetta registered March 2002 1984cc 02.jpg|thumb|left|Volkswagen Jetta]]
+
+The Golf 4 was produced in Germany, South Africa, Slovakia, Brazil, Belgium, and China. Eastern European locations making the Golf 4 included Bosnia and Herzegovina, in Vogošća, which also made [[Volkswagen Golf Mk1|Mk1]] and [[Volkswagen Golf Mk2|Mk2]] models.
+
+The Golf/Jetta Mk4 engine choices included 1.4, 1.6, 1.8, 2.0, 2.3 &amp;nbsp; litre [[VR5 engine|VR5]], 2.8 &amp;nbsp; litre [[V6]] and 3.2 &amp;nbsp; litre R32 petrol engines, 1.9-litre naturally aspirated diesel SDI engine, and a 1.9-litre turbodiesel, with power ranging from 90 to 150 PS (66 to 110&amp;nbsp;kW). The R32 engine was not added to the range until much later, while the 2.3 V5 was a new addition to the Golf range. The rest of the engine line-up differed little from that of the MK3 Golf.
+
+Volkswagen made a choice of three and five-door hatchbacks or a five-door station wagon available.  The European Golf wagon, launched in the spring of 1999, was nearly identical to the North American Jetta Wagon.  The only difference was the use of the Golf front headlights, bumpers, grille, hood, and fenders, as these parts are interchangeable between the Mk4 Golf and Bora/Jetta.
+
+The Golf 4 was introduced to North America in mid-1999. Available engines for the Golf at its introduction to the American market were a 2.0L gasoline engine, and a 48mpg 1.9L [[Turbo Direct Injection|TDI]] engine. In 2004, the updated 1.9L TDI PD or [[Pumpe-Düse]] engine was installed in the Golf and Jetta.  The {{Lang|de|Pumpe-Düse}} or pump nozzle was a [[Robert Bosch]] extreme high-pressure fuel injection system for direct cylinder injection. A 1.8 L turbocharged gas engine was introduced in 2000, along with the 12-valve 2.8L VR6. At the same time, the 1.6L 8-valve unit was replaced with the 16-valve unit from the [[Volkswagen Polo GTI|Polo GTI]], but detuned to 77 kW (105 PS). For 2000, Volkswagen opted for the relatively new 1.8L 20-valve turbocharged gasoline engine as a base engine for the GTI.  The top-of-the-line GLX model was equipped with Volkswagen's 2.8&amp;nbsp;L [[VR6]], which produced {{Convert|174|hp|kW|0|abbr=on}}. The VR6 engine, with its narrow 15-degree Vee design, was unique to Volkswagen. This engine is shorter and lighter (featuring a single cylinder head) than other V6 engines. For the 2002.5 model year, Volkswagen introduced a 24-valve version of its VR6 engine to the North American market under engine code BDF.  This engine had the same torque characteristics as the older 12-valve version, which had been carried over from the Mk3 Golf under engine codes AAA and AFP. The 24-valve version gained an additional {{Convert|26|hp|kW|0|abbr=on}} over the 12-valve to reach 204BHP. In Europe, the VR6-engined V6 [[4Motion]] variant was produced from 1999 with 204BHP and a 24-valve engine from the outset, using engine codes AUE and AQP. In 2002, the European market began using the BDF-code engine at the same time as the North American market. This had the same 204BHP power output but now featured variable valve timing on the exhaust valves, which allowed the engine to rev more freely in the higher ranges, and now had "coil-on-plug" ignition coils. The 1.8T and VR6 models continued until 2005, when the Mk4 platform came to an end in North America (except Canada). Both the Mk4 Golf and the Mk4 Jetta were still in production in Brazil, Mexico, and China as of 2008, with these models nicknamed the Mk4.5.
+
+The Mk4.5 Brazilian Golf TDI PD was sold in Canada due to its popularity as a full 2006 model in base, GL and GLS trim levels for the full model year, as there were no diesel engine versions for the North American 2007 Mk5 Golf (Rabbit).
+
+In Europe, trim levels were country-specific; however, the base trim levels were: Trendline, Comfortline, Highline and GTI. Any others, like the Ocean, Pacific and Edition Trim levels, were modifications of the regular four trim levels.
+
+The United Kingdom sold the Mk4 with the following trim levels: E, S, SE, GT TDI, GTI TDI, GTI and V5/V6/V6 4MOTION versions. The V5 was available in 150 bhp/110 kW (1997–2000) and 170 bhp/125 kW (1999–2003) versions.
+
+== Special editions ==
+=== GTI 25th Anniversary Edition (2001) / 337 Edition (2002) ===
+[[File:VW GTI 337.jpg|thumb|Volkswagen GTI 337 Edition]]
+The ''GTI 25th Anniversary Edition'' was a special version of the Golf GTI for the European market to commemorate the first GTI, launched in 1976. The 25th Anniversary edition was available in three paint colour options: Tornado Red, Reflex Silver &amp; Diamond Black.&lt;ref&gt;{{cite web|url=http://www.doppel-wobber.de/wbb2/Modell_480_VW-Golf-GTI-25-Jahre.html |title=GTI 25 Jahre |publisher=Doppel-wobber.de |access-date=2012-04-09}}&lt;/ref&gt;
+
+The GTI 25th anniversary edition was equipped with many extra features not included in the standard GTI, which included: 18x7.5" [[BBS Kraftfahrzeugtechnik AG|BBS]] RC wheels with a special shot peened finish, a perforated leather steering wheel, shift boot, and handbrake, red accented seat belts, red and black upholstered [[Recaro]] seats, a body kit (front valance, side skirts, hatch spoiler, and rear valance), blackened headlights, a 02M 6-speed manual transmission, larger 312mm front brakes and 256mm vented rear brakes with red painted calipers, a lowered sport tuned suspension, and brushed aluminium interior trim.
+
+At the 2002 New York International Auto Show, VW announced the 25th Anniversary Edition would be sold in the US Market as the GTI 337 Edition, named for the early 1970s Golf/GTI codename. Available only in Reflex Silver, the 337 Edition was substantially the same as the European 25th Anniversary GTI, albeit without the black headlight trim.&lt;ref&gt;{{Cite web|date=2002-04-01|title=Volkswagen GTI 337 Edition|url=https://www.caranddriver.com/news/a15136751/volkswagen-gti-337-edition-auto-shows|access-date=2021-10-17|website=Car and Driver|language=en-US}}&lt;/ref&gt;
+
+These models were never equipped with a sunroof to take the car back to its roots, the [[Volkswagen Golf Mk1|Mk1 GTI]], and improve handling and performance. However, one instance of the 337 edition is known to have been specially ordered with a sunroof. {{Citation needed|date=October 2021}}
+
+This version of the GTI was only available in a 3-door configuration and was also available with the PD150 TDI engine, running the shortest ratio EFF 02M 6 speed manual gearbox. (Standard GTI TDI&lt;ref&gt;[https://vwgolfmania.altervista.org/articoli-top-vw/28-tdi-gti-150-cv.html “Golf IV Gti Tdi 150 cv” (“VW Golf mania” - www.vwgolfmania.altervista.org)] - [https://www.youtube.com/watch?v=aUX8XAjZCn8 “Vw Golf mk4 GTI tdi by Carburatori Bergamo (Km/h 260, € 28.500,00 VW Italy 2001: one of first Golf IV with Six-speed manual transmissions)” (“BOBB TV - PADDOCK TV” Official Channel YouTube)]&lt;/ref&gt; models had the PD150 engine with the ERF 02M gearbox, the mid-way point for ratio length).
+
+The UK versions of the Anniversary edition were numbered with individual plaques placed on the fusebox cover.
+
+=== GTI 20th Anniversary Edition (North American market) ===
+[[File:20th GTI PF.jpg|thumb|left|Volkswagen GTI 20th Anniversary Edition]]
+Following the initial commemorative anniversary edition MK3 GTI produced in Europe in 1996, celebrating the introduction of the GTI model in 1976, and the popularity of the 25th anniversary edition GTI produced in 2001, [[Volkswagen of America]] produced 4,200 "20th Anniversary Edition" GTIs for 2003; 4,000 were shipped to the United States and 200 to Canada. This marked the 20th anniversary of the GTI's 1983 introduction to the U.S. and Canadian market, some seven years after the GTI was introduced to the European market. Several special features distinguish the 20th Anniversary GTI from the standard GTI, most of which were shared with the 337 Edition of 2002.
+[[File:20th Interior.jpg|thumb|right|Volkswagen GTI 20th Anniversary Edition Interior]]
+
+On the outside, the 20th Anniversary edition came with throwback red-lettered GTI logos on the left front and right rear. The rear was also accompanied by a vintage-look chrome rabbit. Similar to the 25th Anniversary edition, exterior included Votex front and rear valences, side skirts, and hatch spoiler, black headlight trim, black painted wing mirrors, and 18" [[OZ Group|OZ]] Aristo alloy wheels wrapped in [[Michelin]] Pilot Sport tires. These models were only produced in three colours: Imola Yellow, Jazz Blue, and Black Magic Pearl. Distribution of production was 50% Black Magic Pearl, 25% Jazz Blue and 25% Imola Yellow.{{Citation needed|date=November 2025}}
+
+Inside, all 20th Anniversary GTIs included a sunroof, a black headliner, and a golf ball shift knob. The steering wheel, shifter boot, and handbrake handle were trimmed in black leather with silver stitching. Unique black cloth [[Recaro]] bucket seats with silver stitching accents and red GTI embroidery were also included. Aluminum trim came standard and included a numbered nameplate above the radio identifying the exact production number (US production only) of the vehicle.&lt;ref&gt;{{Cite web|date=2003-02-01|title=Volkswagen 20th Anniversary GTI|url=https://www.caranddriver.com/news/a15135913/volkswagen-20th-anniversary-gti-news|access-date=2021-10-17|website=Car and Driver|language=en-US}}&lt;/ref&gt; Volkswagen's premium eight-speaker [[Monsoon (speakers)|Monsoon]] stereo system was also standard.
+
+Mechanically, the 20th Anniversary Edition GTI is nearly identical to the GTI 337 Edition. Including the 6-speed manual 02M transmission, 30mm lowered suspension, and 1.8T engine. The brakes were also upgraded with 12.3" vented rotors up front and 10.3" vented rotors in the rear, as well as red powder-coated callipers.
+{{Clear right}}
+
+==Golf R32 (2003){{anchor|R32}}==
+{{Multiple image
+| align             = left
+| direction         = vertical
+| width             = 220
+| image1            = Volkswagen Golf IV R32 Classic-Days 2022 DSC 0035.jpg
+| caption1          = Deep Blue Pearl VW Golf R32 - front
+| image2            = VW Golf IV R32 20090916 rear.jpg
+| caption2          = European-spec R32 - rear. The 5-door R32 was only offered for the European market.
+}}
+
+In 2002, Volkswagen produced the '''Golf R32''' in Europe as a 2003 [[model year]]. It was the world's first production car with a dual-clutch gearbox ([[Direct-Shift Gearbox|DSG]]) — available for the German market.&lt;ref name="VMS"&gt;{{cite web|url=https://www.volkswagen-media-services.com/medias_publish/ms/content/en/pressemitteilungen/2002/11/22/volkswagen_dsg_-_world.standard.gid-oeffentlichkeit.html |title=Press Release: Volkswagen DSG - World's first dual-clutch gearbox in a production car |publisher=Volkswagen Media Services |date=22 November 2002 |url-status=dead |archive-url=https://web.archive.org/web/20060524093743/http://www.volkswagen-media-services.com/medias_publish/ms/content/en/pressemitteilungen/2002/11/22/volkswagen_dsg_-_world.standard.gid-oeffentlichkeit.html |archive-date=May 24, 2006 }}&lt;/ref&gt; Due to unexpected popularity, Volkswagen decided to sell the car in the United States and Australia for the 2004 model year Volkswagen R32. 
+[[File:VW Golf R32 - Flickr - The Car Spy (18).jpg|thumb|Volkswagen R32 interior]]
+
+The R32 shared many mechanical components with the 3.2-litre [[Audi TT]], including the {{convert|3189|cc|L CID|1|abbr=on}} [[Overhead camshaft#Dual overhead camshaft|DOHC]] 24v [[VR6 engine]] (ID codes: BFH/BML), which produced {{convert|241|PS|bhp kW|0|abbr=on}} at 6,250 rpm and {{convert|320|Nm|lbft|0|abbr=on}} at 2,800 rpm.&lt;ref&gt;{{cite web|url=https://www.carfolio.com/specifications/models/car/?car=101596|website=carfolio.com|title=2002 Volkswagen Golf R32 Golf 4|access-date=June 18, 2018}}&lt;/ref&gt; Further additions included [[Haldex Traction]]-based [[4motion]] on-demand [[four-wheel drive]] system, a six-speed manual transmission, aluminum front control arms, independent rear suspension, and larger {{convert|334|mm|1|abbr=on}} disc brakes with gloss blue painted calipers. Exterior changes included R32-specific bumpers and side skirts, a hatch spoiler, and 18" [[OZ Group|OZ]] Aristo alloy wheels ([[Ronal]] produced the wheels towards the end of production). The interior of the R32 was equipped with Climatronic automatic climate control, sport seats from König with ''R'' logo embroidery, a sunroof (US only), Xenon Headlamps (for Europe), and more.
+
+For Australia, two hundred "Edition 200" cars were produced, each uniquely plaqued and available in three colours: Black Magic Pearl, Deep Blue Pearl and Reflex Silver.&lt;ref&gt;{{cite web|url=http://www.billswebspace.com/OZR32flyer2.JPG|title=The New Volkswagen Golf R32|publisher=Volkswagen Group Australia|date=February 2003}}&lt;/ref&gt;
+
+For the US, Tornado Red was an available fourth colour. The distribution of US-spec R32 colours were:&lt;ref&gt;{{cite web|url=http://forums.vwvortex.com/showthread.php?1285689#post12525507|title=General Information|date=11 March 2004|access-date=8 November 2016}}&lt;/ref&gt;
+* Deep Blue Pearl: 40%
+* Reflex Silver: 35%
+* Black Magic Pearl: 15%
+* Tornado Red: 10%
+
+For the US, five thousand cars were produced and intended to be sold over a two-year period. The allotment sold out in 13 months.{{citation needed|date=August 2009}}
+
+The R32 is capable of 0-{{convert|100|km/h|1|abbr=on}} in 6.6&amp;nbsp;seconds, reduced to 6.4&amp;nbsp;seconds with the [[dual clutch gearbox]],&lt;ref name="VMS" /&gt; and can clear the quarter mile in 14.1 seconds at {{convert|99.2|mi/h|km/h|abbr=on}}.
+{{Clear left}}
+
+==Extended production Mk4.5==
+=== China ===
+{{Multiple image
+| align             = left
+| direction         = vertical
+| width             = 220
+| image1            = Volkswagen Golf IV 01 China 2016-04-08.jpg
+| image2            = Volkswagen Golf IV 02 China 2016-04-08.jpg
+| caption2          = FAW-Volkswagen Golf Mk4
+}}
+{{Multiple image
+| align             = right
+| direction         = vertical
+| width             = 220
+| image1            = VW Bora HS.jpg
+| image2            = FAW-VW Bora HS.JPG
+| caption2          = 2006–2008 FAW Volkswagen Bora HS Mk4.5 (China)
+| caption1          = 
+}}
+
+In China, the Golf Mk4 commenced production in 2003 by [[FAW-Volkswagen]], where it was sold alongside a new version of the Golf IV with [[Volkswagen Group China|FAW-VW's]] facelifted Bora front. It was shown at the Beijing International Automobile Exhibition in 2006 and was named as the '''Bora HS''' to complement the Bora Mk IV range and shared similar styling cues. The Mk4 Golf and Bora HS ended production in 2008 and 2009, respectively, where they were both succeeded by the [[Volkswagen Golf Mk6]] for the 2010 model year.&lt;ref&gt;{{cite web|url=https://car.autohome.com.cn/pic/series-s4318/871.html#pvareaid=2042220|title=2008 FAW Volkswagen Golf Mk4 pictures}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=https://carnewschina.com/2012/09/22/recent-china-car-history-the-volkswagen-golf-bora/|title=VW Golf Bora HS|date=22 September 2012 }}&lt;/ref&gt; The Golf came standard with the 1.6 litre engine and 1.8 litre engine for the 2005 model year. The engines were paired to a 5-speed manual or 4-speed automatic gearbox as standard. Its Bora counterpart came standard with the same 1.6 litre engine and transmission options as the Golf. In comparison to pricing and trim levels, the 2004 Golf was priced from 116,000 to 139,000 yuan ($17,680 to $21,190 US – March 2021 exchange rate) and two trim levels available, known as Fashion and Charming.&lt;ref&gt;{{cite web|url=https://car.autohome.com.cn/config/spec/713.html#pvareaid=3454541|title=Volkswagen Golf Mk4 specifications (Chinese market)}}&lt;/ref&gt; For the Bora HS, pricing ranged from 112,500 to 129,800 yuan ($17,150 to US$19,780 - March 2021 exchange rate) also with 2 trim levels known as Fashion and Luxury.&lt;ref&gt;{{cite web|url=https://car.autohome.com.cn/config/spec/2742.html#pvareaid=3454541|title=Volkswagen Bora HS specifications}}&lt;/ref&gt;
+{{clear}}
+
+===Americas===
+{{Multiple image
+| align             = left
+| direction         = vertical
+| image1            = 2008 Volkswagen City Golf.JPG
+| image2            = 2008 Volkswagen Golf City, Rear Right, 03-11-2021.jpg
+| caption2          = 2008 Volkswagen City Golf Mk4.5 (Canada/Latin America)
+}}
+
+The facelifted Golf Mk4 (nicknamed the Mk4.5) continued to be produced in Brazil until 2013. In Argentina, the range was available with a 1.6L or 2.0L petrol four-cylinder, a 1.8L turbocharged petrol four-cylinder, or with a 1.9L  {{convert|130|bhp|kW|0|abbr=on}} turbodiesel. In Chile, it was also sold until 2010, with a 1.6 to 2.0&amp;L petrol range. All of these are Brazilian-built models, although the diesels are only for export markets.
+
+In Brazil, the Mk4.5 Golf has a 1.6 L engine (with Volkswagen's Total Flex system, which accepts both [[Flexible-fuel vehicle|gasoline and ethanol]]), or a 2.0 L engine (the 1.8 turbo engine was discontinued in 2009). It is available in two trim levels: the basic Sportline model with the 1.6 engine, and the 2.0 version with a [[Tiptronic]] 6-speed transmission.
+[[File:VW City Golf Mk4.5 Interior.jpg|thumb|Volkswagen City Golf Mk4.5 interior]]
+In 2007, Volkswagen Brazil introduced a major restyling of the fourth-generation Golf. The front takes styling cues from the current [[Volkswagen Polo]] and the back of the car is inspired by the [[Volkswagen Golf Mk5|Golf 5]].&lt;ref&gt;{{cite web|url=http://motor-show.com.ar/2007/04/13/nuevo-vw-golf-en-brasil-generacion-iv-y-medio/ |title=Nuevo VW Golf en Brasil: Generación IV "y medio" |publisher=MotorShow |access-date=2009-10-07}}&lt;/ref&gt; It is exported in most Latin America countries, since it is produced in Brazil. It was also sold in Canada, where the Mk4.5 model (City Golf) was sold alongside the Mk5 model (badged as the Rabbit). This car was not sold in the United States. The lack of diesel models for the 2007 model year led Volkswagen Canada to continue sales of an entry-level car that was designed as an alternative to the TDI models for budget-minded shoppers. The Canadian model was originally rebadged as the City Golf, but in 2009, it was renamed the Golf City alongside the Jetta City. Pricing of the Golf City started at [[Canadian dollar|C$]]15,300 as of 2008. As an entry-level alternative to the Rabbit, it offered only one engine: the 2.0L [[SOHC]] 8 valve with {{Convert|115|hp|kW|0|abbr=on}}. It was not related to the South African [[Volkswagen Citi Golf]], despite the similarity in name. The Mk4.5 Jetta was similarly reintroduced in Canada for the 2007 model year as the City Jetta. Although the Golf City was dated, its attractive price enabled good sales. The Golf City was discontinued after the 2010 model year.
+{{clear}}
+
+==Awards==
+*2004 [[SEMA (association)|SEMA]]: ''[[Gran Turismo (series)|Gran Turismo]]'' Award
+*2000 ''CAP'' Used Car of the Year Awards – Best Small Hatch
+*2000 ''Diesel Car'' 2000 Awards – Best Hatchback
+*1999 ''Used Car Buyer'' Greatest Used Buy Awards – Best Small Family Car
+*1998 ''[[What Car?]]'' Car of the Year Awards – Best Small Hatch
+*1998 ''[[Top Gear Magazine]]'' Top Cars – Best Family Car
+{{clear}}
+
+==Engine choices==
+
+===Golf and Jetta ===
+{| class="wikitable" style="text-align:center;"
+|-
+
+! Model
+! Year
+! Engine
+! Code
+! Displ.
+! Power
+! Torque
+|-
+! 1.4
+| 1998–2004 || [[Straight-four engine|I4]] 16V || [[List of discontinued Volkswagen Group petrol engines#1.4 R4 16v|AHW/AXP/BCA/AKQ/APE/AUA]] || 1390 cc || {{convert|55|kW|PS hp|0|abbr=on}} at 5,500 rpm ||{{convert|128|Nm|lb.ft|abbr=on}} at 3,300 rpm
+|-
+! 1.6
+| 1998–2000 || I4 8V || [[Volkswagen EA827 engine#70–102 hp 1.6|AEH/AKL/APF]] || rowspan="2" | 1595 cc || {{convert|74|kW|PS hp|0|abbr=on}} at 5,600 rpm ||{{convert|145|Nm|lb.ft|abbr=on}} at 3,800 rpm
+|-
+! 1.6
+| 2000–2006 || I4 8V || [[Volkswagen EA827 engine#70–102 hp 1.6|AVU/BFQ]] || {{convert|75|kW|PS hp|0|abbr=on}} at 5,600 rpm ||{{convert|148|Nm|lb.ft|abbr=on}} at 3,800 rpm
+|-
+! 1.6
+| 2000–2006 || I4 16V || [[List of Volkswagen Group petrol engines#1.6 R4 16v|AUS/AZD/ATN/BCB]] || rowspan = "2" | 1598 cc || {{convert|77|kW|PS hp|0|abbr=on}} at 5,700 rpm ||{{cvt|148|Nm|lbft|0}} at 4,500 rpm
+|-
+! 1.6 [[Gasoline direct injection|FSI]]
+| 2002–2005 || I4 16V || [[List of discontinued Volkswagen Group petrol engines#1.6 R4 FSI 81-85kW|BAD]] || {{cvt|81|kW|PS hp|0}} at 5,800 rpm ||{{cvt|155|Nm|lbft|0}} at 4,400 rpm
+|-
+! 1.8
+| 1998–2006 || I4 20V || [[List of discontinued Volkswagen Group petrol engines#AGN|AGN/BAF]] || rowspan="3" | 1781 cc || {{convert|92|kW|PS hp|0|abbr=on}} at 5,900 rpm ||{{convert|170|Nm|0|abbr=on}} at 3,500 rpm
+|-
+|-
+! 1.8 [[Turbocharger|T]]
+| 1998-2001 || I4 20V || [[List of Volkswagen Group petrol engines#1.8 20vT|AGU/ARX/ARZ/AUM/AWD/AWW/BAE]] || {{convert|110|kW|PS hp|0|abbr=on}} at 5,500 rpm ||{{cvt|210|Nm|lbft|0}} at 2,200–4,200 rpm
+|-
+! 1.8 [[Turbocharger|T]]
+| 2001-2006 || I4 20V || [[1.8T|AUQ/AWP]] || {{convert|132|kW|PS hp|0|abbr=on}} at 5,500 rpm ||{{cvt|235|Nm|lbft|0}} at 1,950–4,700 rpm
+|-
+! 2.0
+| 1999–2001 || I4 8V || [[List of discontinued Volkswagen Group petrol engines#APK|AEG/APK/AQY]] || rowspan="2" | 1984 cc || {{cvt|115|PS|kW PS hp|0|order=out}} at 5,200 rpm ||{{cvt|170|Nm|lbft|0}} at 2,400 rpm
+|-
+! 2.0
+| 2001–2006 || [[straight-4|I4]] 8V || [[List of discontinued Volkswagen Group petrol engines#AZJ|AZH/AZJ]] || {{cvt|115|PS|kW PS hp|0|order=out}} at 5,400 rpm ||{{convert|172|Nm|lb.ft|abbr=on}} at 3,200 rpm
+|-
+! 2.3 VR5
+| 1998–2000 || [[VR5 engine|VR5]] 10V || [[List of discontinued Volkswagen Group petrol engines#AGZ|AGZ]] || rowspan="2" | 2324 cc || {{cvt|110|kW|PS hp|0}} at 6,000 rpm ||{{convert|205|Nm|lb.ft|abbr=on}} at 3,200 rpm
+|-
+! 2.3 VR5
+| 2000–2003 || [[VR5 engine|VR5]] 20V || [[List of discontinued Volkswagen Group petrol engines#AQN|AQN]] || {{convert|125|kW|PS hp|0|abbr=on}} at 6,200 rpm ||{{convert|220|Nm|0|abbr=on}} at 3,300 rpm
+|-
+! 2.8 VR6
+| 1999–2002 || [[VR6 engine|VR6]] 12V || [[List of discontinued Volkswagen Group petrol engines#AAA|AAA/AFP]] || rowspan="3" | 2792 cc || {{convert|128|kW|PS hp|0|abbr=on}} at 5,800 rpm ||{{convert|235|Nm|lb.ft|abbr=on}} at 4,200 rpm
+|-
+! 2.8 VR6
+| 1999–2002.5 || rowspan = "3" | [[VR6 engine|VR6]] 24V || [[List of discontinued Volkswagen Group petrol engines#2.8 VR6 24v 147–150 kW|AQP/AUE]]|| rowspan="2" | {{convert|150|kW|PS hp|0|abbr=on}} at 6,000 rpm || rowspan = "2" | {{convert|270|Nm|0|abbr=on}} at 3,200 rpm
+|-
+! 2.8 VR6
+| 2002.5–2005 || [[List of discontinued Volkswagen Group petrol engines#BDF|BDF]]
+|-
+! 3.2 R32
+| 2001–2004 || [[List of discontinued Volkswagen Group petrol engines#BML|BJS/BML]] || 3189 cc || {{convert|177|kW|PS hp|0|abbr=on}} at 6,250 rpm ||{{convert|320|Nm|0|abbr=on}} at 2,800 rpm
+|-
+|colspan="7"|
+|-
+! 1.9 [[Suction Diesel Injection|SDI]]
+| 1998–2006 || [[Straight-four engine|I4]] 8V || [[List of discontinued Volkswagen Group diesel engines#1.9 R4 SDI 29-50kW|AGP/AQM]]|| rowspan="8" | 1896 cc || {{convert|50|kW|PS hp|0|abbr=on}} at 4,200 rpm ||{{convert|133|Nm|lb.ft|abbr=on}} at 2,200–2,600 rpm
+|-
+! 1.9 [[Turbocharged Direct Injection|TDI]]
+| 1998–2006 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#1.9 R4 8v TDI 29-81kW (EA827/EA180)|AGR/ALH]]|| {{convert|66|kW|PS hp|0|abbr=on}} at 4,000 rpm ||{{convert|210|Nm|0|abbr=on}} at 1,900 rpm
+|-
+! 1.9 TDI
+| 2000–2006 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#EA180|ATD/AXR]] ([[Pumpe-Düse]]) || {{convert|74|kW|PS hp|0|abbr=on}} at 4,000 rpm ||{{convert|240|Nm|0|abbr=on}} at 1,800–2,400 rpm
+|-
+! 1.9 TDI
+| 1998–2002 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#1.9 R4 8v TDI 29-81kW (EA827/EA180)|AHF/ASV]]|| {{convert|81|kW|PS hp|0|abbr=on}} at 4,150 rpm ||{{convert|235|Nm|lb.ft|abbr=on}} at 1,900 rpm
+|-
+! 1.9 TDI
+| 1998–2000 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#EA180|AJM]] ([[Pumpe-Düse]]) || rowspan="2" | {{cvt|115|PS|kW PS hp|0|order=out}} at 4,000 rpm ||{{convert|285|Nm|lb.ft|abbr=on}} at 1,900 rpm
+|-
+! 1.9 TDI
+| 1999–2001 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#EA180|AUY]] ([[Pumpe-Düse]]) || {{convert|310|Nm|0|abbr=on}} at 1,900 rpm
+|-
+! 1.9 TDI
+| 2001–2006 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#EA180|ASZ]] ([[Pumpe-Düse]]) || {{cvt|130|PS|kW PS hp|0|order=out}} at 4,000 rpm ||{{convert|310|Nm|0|abbr=on}} at 1,900 rpm
+|-
+! 1.9 TDI
+| 2000–2003 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#EA180|ARL]] ([[Pumpe-Düse]]) || {{convert|110|kW|PS hp|0|abbr=on}} at 4,000 rpm ||{{convert|320|Nm|0|abbr=on}} at 1,900 rpm
+|}
+
+===Golf Cabriolet (Mk3 platform)===
+{| class="wikitable" style="text-align:center;"
+|-
+! Model
+! Years
+! colspan="2"|Engine and code
+! Displ.
+! Power
+! Torque
+|-
+! 1.6
+| 1998–2000 || I4 8V || [[Volkswagen EA827 engine#240-7003 hp 1.6|AFT/AKS]] || 1595 cc || {{convert|74|kW|PS hp|0|abbr=on}} at 5,800 rpm ||{{convert|140|Nm|0|abbr=on}} at 3,500 rpm
+|-
+! 1.8
+| 1998–2000 || I4 8V || [[Volkswagen EA827 engine#75–112 hp 1.8|AAM/ANN]] || rowspan="2" | 1781 cc || {{convert|55|kW|PS hp|0|abbr=on}} at 5,000 rpm ||{{convert|140|Nm|0|abbr=on}} at 2,500 rpm
+|-
+! 1.8
+| 1998–2000 || I4 8V || [[Volkswagen EA827 engine#75–112 hp 1.8|ADZ/ANP]] || {{convert|66|kW|PS hp|0|abbr=on}} at 5,500 rpm ||{{convert|145|Nm|lb.ft|abbr=on}} at 2,500 rpm
+|-
+! 2.0
+| 1998–2000 || I4 8V || [[Volkswagen EA827 engine#AGG|AGG]] || rowspan="3" | 1984 cc || rowspan="3" | {{cvt|115|PS|kW PS hp|0|order=out}} at 5,400 rpm ||{{convert|166|Nm|lb.ft|abbr=on}} at 2,600 rpm
+|-
+! 2.0
+| 2000–2002 || I4 8V || [[Volkswagen EA827 engine#AWG|AWG/AWF]] || rowspan="2" | {{convert|165|Nm|lb.ft|abbr=on}} at 3,200 rpm
+|-
+! 2.0
+| 1999–2002 || I4 8V || [[Volkswagen EA827 engine#AWG|ABA]]
+|-
+! 1.9 [[Turbocharged Direct Injection|TDI]]
+| 1998–2002 || I4 8V || [[List of discontinued Volkswagen Group diesel engines#ALE|ALE]]|| 1896 cc || {{convert|66|kW|PS hp|0|abbr=on}} at 3,750 rpm ||{{convert|210|Nm|0|abbr=on}} at 1,900 rpm
+|}
+
+==Safety==
+{{ANCAP
+|overall_stars=4
+|year=2001
+|reference_code=8bfcb2
+|description=Volkswagen Golf 5 door hatch
+|frontal_offset=10.09/16
+|side_impact=14.69/16
+|pole=Not Assessed
+|seat_belt_reminders=0/3
+|whiplash_protection=Not Assessed
+|pedestrian_protection=Marginal
+|electronic_stability_control=Not Assessed
+}}
+
+==Pope Benedict XVI==
+In 1999, Joseph Cardinal Ratzinger, prefect of the Catholic Church's Congregation of the ''Doctrine of the Faith'' under Pope John Paul II, purchased a fourth-generation Golf in which to drive around Rome, selling it in 2005 after John Paul's death in anticipation of retiring and returning to Germany.
+
+Instead, he became [[Pope Benedict XVI]]. Shortly after John Paul's death, his 1999 Golf sold to a German owner for $13,000,&lt;ref&gt;{{cite web |url=http://qi.com/television/series-j/joints/the-pope |title=QI: Quite Interesting |website=qi.com |url-status=dead |archive-url=https://web.archive.org/web/20130113044306/http://qi.com/television/series-j/joints/the-pope |archive-date=2013-01-13}}&lt;/ref&gt; who then sold the car for around $244,000 via eBay to online betting company [[GoldenPalace.com]].&lt;ref&gt;{{cite web| url=https://www.voanews.com/a/a-13-pope-benedict-car-fetches-more-than-244000-dollars-in-online-auction-66383892/547944.html |title=Pope Benedict's Car Fetches More Than $244,000 in Online Auction | work = Voice of America |date=2009-10-27}}&lt;/ref&gt;
+
+==See also==
+*[[Hot hatch]]
+*[[List of Volkswagen Group diesel engines]]
+*[[List of Volkswagen Group petrol engines]]
+*[[Compact car]]
+*[[VDub]]
+*[[Volkswagen Group A platform]]
+
+==References==
+{{reflist}}
+
+==External links==
+{{commons category|Volkswagen Golf GTI}}
+{{commons category|Volkswagen Golf R32}}
+{{commons category|Volkswagen Golf Mk4}}
+{{commons category|Volkswagen Golf IV}}
+*[https://web.archive.org/web/20080304120015/http://www.volkswagen.com/vwcms_publish/vwcms/master_public/virtualmaster/en2/models/golf_start.html Golf at Volkswagen International]
+
+&lt;!--======================== {{No more links}} ============================
+    | PLEASE BE CAUTIOUS IN ADDING MORE LINKS TO THIS ARTICLE. Wikipedia  |
+    | is not a collection of links nor should it be used for advertising. |
+    |                                                                     |
+    |           Excessive or inappropriate links WILL BE DELETED.         |
+    | See [[Wikipedia:External links]] &amp; [[Wikipedia:Spam]] for details.  |
+    |                                                                     |
+    | If there are already plentiful links, please propose additions or   |
+    | replacements on this article's discussion page, or submit your link |
+    | to the relevant category at the Open Directory Project (dmoz.org)   |
+    | and link back to that category using the {{dmoz}} template.         |
+======
+========{{No more links}}===
+========
+--&gt;
+
+{{S-start}}
+{{Succession box
+| title = Volkswagen Golf Mk4
+| years = 1998–2014
+| before = [[Volkswagen Golf Mk3]]
+| after = [[Volkswagen Golf Mk5]]
+}}
+{{S-end}}
+
+{{VW}}
+{{Volkswagen (Europe) timeline 1980 to date}}
+{{Volkswagen (North America) timeline 1980 to date}}
+{{Volkswagen (South America) timeline 1980 to date}}
+{{Volkswagen (China) timeline 1984 to date}}{{Authority control}}
+
+[[Category:Volkswagen vehicles|Golf 4]]
+[[Category:All-wheel-drive vehicles]]
+[[Category:Cars powered by VR engines]]
+[[Category:Compact cars]]
+[[Category:ANCAP small cars]]
+[[Category:Euro NCAP small family cars]]
+[[Category:Latin NCAP small family cars]]
+[[Category:Flexible-fuel vehicles]]
+[[Category:Front-wheel-drive vehicles]]
+[[Category:Hatchbacks]]
+[[Category:Station wagons]]
+[[Category:Cars introduced in 1998]]
+[[Category:Cars discontinued in 2014]]
+&lt;!-- "Category: Cars introduced in 1998" is included in "Category:1990s cars", it does not need to be in the same category twice. --&gt;
+[[Category:2000s cars]]
+[[Category:2010s cars]]
+[[Category:Cars of Belgium]]
+[[Category:Cars of Brazil]]
+[[Category:Cars of Mexico]]
+[[Category:Cars of Slovakia]]
+[[Category:Cars of South Africa]]</text>
+      <sha1>jmu41j7undvwff05slt6c9wwk7byqys</sha1>
+    </revision>
+  </page>
+</mediawiki>
