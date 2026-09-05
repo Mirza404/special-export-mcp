@@ -11,6 +11,7 @@ license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = [
     "requests>=2.31",
+    "defusedxml>=0.7",
 ]
 
 [project.optional-dependencies]
@@ -22,6 +23,7 @@ dev = [
     "mypy>=1.10",
     "hypothesis>=6.100",
     "types-requests",
+    "types-defusedxml",
 ]
 
 [project.urls]
