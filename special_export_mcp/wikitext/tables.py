@@ -34,6 +34,38 @@ class Limits:
 
 
 @dataclass
+class TableWarning:
+    """A machine-readable table-integrity warning.
+
+    Warnings are data-quality controls, not parser diagnostics that callers
+    may safely ignore.  ``values`` contains the same raw-wikitext row stored
+    in ``ParsedTable.rows`` so a client can surface the warning independently
+    without losing the evidence that caused it.
+    """
+
+    kind: str
+    reason: str
+    table_index: int | None = None
+    row: int | None = None
+    expected_columns: int | None = None
+    occupied_columns: int | None = None
+    source_cells: int | None = None
+    values: list[str] | None = None
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "kind": self.kind,
+            "reason": self.reason,
+            "table_index": self.table_index,
+            "row": self.row,
+            "expected_columns": self.expected_columns,
+            "occupied_columns": self.occupied_columns,
+            "source_cells": self.source_cells,
+            "values": self.values,
+        }
+
+
+@dataclass
 class ParsedTable:
     headers: list[str] = field(default_factory=list)
     rows: list[list[str]] = field(default_factory=list)
@@ -41,7 +73,7 @@ class ParsedTable:
     index: int = 0
     parent_table_index: int | None = None
     truncated: bool = False
-    warnings: list[str] = field(default_factory=list)
+    warnings: list[TableWarning] = field(default_factory=list)
 
 
 def _collapse_ws(text: str) -> str:
@@ -160,6 +192,8 @@ def parse_tables(
             # post-pass below once every table that will be kept has one.
             parsed = _build_parsed_table(raw_rows, frame.caption, parent_id_of[table_id], limits)
             parsed.index = len(finished)
+            for warning in parsed.warnings:
+                warning.table_index = parsed.index
             id_to_output_index[table_id] = parsed.index
             finished.append(parsed)
             continue
@@ -216,7 +250,7 @@ def _build_parsed_table(
     parent_id: int | None,
     limits: Limits,
 ) -> ParsedTable:
-    warnings: list[str] = []
+    warnings: list[TableWarning] = []
     truncated = False
 
     headers: list[str] = []
@@ -225,16 +259,27 @@ def _build_parsed_table(
         headers, header_truncated = _expand_headers(raw_rows[0], limits)
         if header_truncated:
             truncated = True
-            warnings.append(f"header truncated at max_cells_per_row={limits.max_cells_per_row}")
+            warnings.append(
+                TableWarning(
+                    kind="truncated",
+                    reason=f"header truncated at max_cells_per_row={limits.max_cells_per_row}",
+                )
+            )
         data_rows = raw_rows[1:]
 
     pending: dict[int, tuple[str, int]] = {}
     grid: list[list[str]] = []
+    row_shapes: list[tuple[int, int]] = []
 
     for raw_row in data_rows:
         if len(grid) >= limits.max_rows_per_table:
             truncated = True
-            warnings.append(f"truncated at max_rows_per_table={limits.max_rows_per_table}")
+            warnings.append(
+                TableWarning(
+                    kind="truncated",
+                    reason=f"truncated at max_rows_per_table={limits.max_rows_per_table}",
+                )
+            )
             break
 
         row_map: dict[int, str] = {}
@@ -269,6 +314,7 @@ def _build_parsed_table(
 
         width = max(row_map.keys()) + 1
         grid.append([row_map.get(i, "") for i in range(width)])
+        row_shapes.append((len(row_map), len(raw_row)))
 
     overall_width = len(headers)
     for row in grid:
@@ -276,6 +322,27 @@ def _build_parsed_table(
     if headers:
         headers = headers + [""] * (overall_width - len(headers))
     grid = [row + [""] * (overall_width - len(row)) for row in grid]
+
+    for row_index, (row, (occupied_columns, source_cells)) in enumerate(
+        zip(grid, row_shapes, strict=True)
+    ):
+        if occupied_columns >= overall_width:
+            continue
+        warnings.append(
+            TableWarning(
+                kind="ambiguous_row_alignment",
+                reason=(
+                    f"row occupies {occupied_columns} of {overall_width} columns after "
+                    "rowspan/colspan expansion; missing cells are not necessarily trailing, "
+                    "so positional values may be shifted"
+                ),
+                row=row_index,
+                expected_columns=overall_width,
+                occupied_columns=occupied_columns,
+                source_cells=source_cells,
+                values=row.copy(),
+            )
+        )
 
     return ParsedTable(
         headers=headers,
