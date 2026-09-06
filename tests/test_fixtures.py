@@ -75,10 +75,8 @@ def test_golf_mk4_no_row_has_zero_cells() -> None:
             assert len(row) > 0
 
 
-# Rows whose Power cell is not expected to yield a kW figure, and why. Both
-# reasons are genuine facts about this real, unmodified article -- not
-# parser defects. See docs/specs/002-table-parsing.md section 2.5 and the
-# session note on the "1.8 T" (AUQ/AWP) row below.
+# Rows whose Power cell is not expected to yield a kW figure because they
+# contain no engine data. See docs/specs/002-table-parsing.md section 2.5.
 _KNOWN_NON_POWER_ROWS = {
     # A doubled |- with a pending rowspan produces a row that carries only
     # the spanned Displ. value; there is no power data in that row at all.
@@ -88,26 +86,47 @@ _KNOWN_NON_POWER_ROWS = {
 }
 
 
+def test_golf_mk4_auq_awp_row_has_a_machine_readable_alignment_warning() -> None:
+    # The doubled |- at the start of this 1.8-litre group consumes one row of
+    # the source's rowspan="3". The final AUQ/AWP row consequently has six
+    # occupied columns for seven headers. The parser stays faithful to that
+    # broken source, but must make the ambiguity impossible to miss.
+    wikitext = _wikitext_from_export_xml(FIXTURES / "volkswagen_golf_mk4.xml")
+    engine_table = parse_tables(wikitext)[0]
+    row_index = next(i for i, row in enumerate(engine_table.rows) if "AUQ/AWP" in row[3])
+
+    warning = next(
+        warning
+        for warning in engine_table.warnings
+        if warning.kind == "ambiguous_row_alignment" and warning.row == row_index
+    )
+    assert warning.table_index == 0
+    assert warning.expected_columns == 7
+    assert warning.occupied_columns == 6
+    assert warning.source_cells == 6
+    assert warning.values == engine_table.rows[row_index]
+
+
 def test_golf_mk4_every_power_cell_yields_a_kw_figure() -> None:
     # Acceptance criteria 9 and 12 in docs/specs/003-inline-and-templates.md:
-    # a (\d+)\s*kW regex matches every power cell, whether authored in kW
-    # or in PS. One row in this real article is a known exception: its
-    # rowspan="3" on Displ. covers only 3 of the 4 rows that actually share
-    # that displacement (the article's own inconsistency, confirmed by
-    # reading the raw wikitext -- a real browser renders the same
-    # column-shifted row from the same HTML rowspan arithmetic). That
-    # shifts Power's value into the Torque column and Torque's into
-    # nothing, for the "1.8 T" (AUQ/AWP, 2001-2006) row specifically.
+    # a (\d+)\s*kW regex matches every non-ambiguous power cell, whether
+    # authored in kW or in PS. Structurally ambiguous rows are selected from
+    # machine-readable parser warnings, never from a hard-coded model name.
     wikitext = _wikitext_from_export_xml(FIXTURES / "volkswagen_golf_mk4.xml")
     tables = parse_tables(wikitext)
     engine_table = tables[0]
     power_idx = engine_table.headers.index("Power")
+    ambiguous_rows = {
+        warning.row
+        for warning in engine_table.warnings
+        if warning.kind == "ambiguous_row_alignment"
+    }
 
     misses = []
-    for row in engine_table.rows:
+    for row_index, row in enumerate(engine_table.rows):
         if tuple(row) in _KNOWN_NON_POWER_ROWS:
             continue
-        if "AUQ/AWP" in row[3]:  # the known column-shifted row, see above
+        if row_index in ambiguous_rows:
             continue
         cleaned, _ = clean_cell(row[power_idx])
         if not re.search(r"(\d+)\s*kW", cleaned):
