@@ -269,6 +269,44 @@ def test_short_rows_are_padded_to_the_header_width() -> None:
 """
     tables = parse_tables(wikitext)
     assert tables[0].rows == [["1", "2", ""]]
+    assert len(tables[0].warnings) == 1
+    assert tables[0].warnings[0].to_dict() == {
+        "kind": "ambiguous_row_alignment",
+        "reason": (
+            "row occupies 2 of 3 columns after rowspan/colspan expansion; "
+            "missing cells are not necessarily trailing, so positional values may be shifted"
+        ),
+        "table_index": 0,
+        "row": 0,
+        "expected_columns": 3,
+        "occupied_columns": 2,
+        "source_cells": 2,
+        "values": ["1", "2", ""],
+    }
+
+
+def test_valid_rowspan_does_not_warn_about_row_alignment() -> None:
+    wikitext = """
+{|
+|-
+! A
+! B
+! C
+|-
+| rowspan="2" | carried
+| first
+| row
+|-
+| second
+| row
+|}
+"""
+    table = parse_tables(wikitext)[0]
+    assert table.rows == [
+        ["carried", "first", "row"],
+        ["carried", "second", "row"],
+    ]
+    assert not any(warning.kind == "ambiguous_row_alignment" for warning in table.warnings)
 
 
 def test_a_row_longer_than_the_header_widens_the_header() -> None:
