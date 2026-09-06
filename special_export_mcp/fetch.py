@@ -10,6 +10,7 @@ import json
 import logging
 import os
 import random
+import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -28,6 +29,16 @@ REPO_URL = "https://github.com/Mirza404/special-export-mcp"
 RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 NON_RETRYABLE_STATUS = {400, 403, 404}
 MAX_BATCH_SIZE = 20
+MAX_REDIRECT_HOPS = 5
+
+_REDIRECT_RE = re.compile(r"^\s*#REDIRECT\s*:?\s*\[\[\s*([^\]|]+?)\s*[|\]]", re.IGNORECASE)
+
+
+def _extract_redirect_target(wikitext: str) -> str | None:
+    match = _REDIRECT_RE.match(wikitext)
+    if match is None:
+        return None
+    return match.group(1).strip()
 
 
 class _PageInfo(TypedDict):
@@ -251,8 +262,8 @@ class Fetcher:
 
         return [results[i] for i in range(len(titles))]
 
-    def _fetch_single(self, title: str) -> FetchResult:
-        url = f"{self.base_url}/wiki/Special:Export/{_title_for_path(title)}?redirects=1"
+    def _fetch_single(self, title: str, _hops_remaining: int = MAX_REDIRECT_HOPS) -> FetchResult:
+        url = f"{self.base_url}/wiki/Special:Export/{_title_for_path(title)}"
         response = self._request("GET", url)
         page_map = self._parse_export_xml(response.text)
         if not page_map:
@@ -261,10 +272,8 @@ class Fetcher:
                 exists=False,
                 error=f"Page not found: {title}",
             )
-        # redirects=1 collapses a redirect into its target: exactly one page
-        # comes back even when its title differs from what was requested.
         page = next(iter(page_map.values()))
-        return FetchResult(
+        result = FetchResult(
             requested_title=title,
             exists=True,
             resolved_title=page["title"],
@@ -273,6 +282,7 @@ class Fetcher:
             revision_id=page["revision_id"],
             revision_timestamp=page["revision_timestamp"],
         )
+        return self._follow_redirect(result, _hops_remaining)
 
     def _fetch_batch(self, titles: list[str]) -> list[FetchResult]:
         url = f"{self.base_url}/w/index.php?title=Special:Export&action=submit"
@@ -280,20 +290,52 @@ class Fetcher:
             "pages": "\n".join(titles),
             "curonly": "1",
             "wpDownload": "0",
-            "redirects": "1",
         }
         response = self._request("POST", url, data=data)
         page_map = self._parse_export_xml(response.text)
-        return self._resolve_batch(titles, page_map)
+        results = self._resolve_batch(titles, page_map)
+        return [self._follow_redirect(r, MAX_REDIRECT_HOPS) for r in results]
+
+    def _follow_redirect(self, result: FetchResult, hops_remaining: int) -> FetchResult:
+        # Special:Export has no working option to resolve a redirect
+        # server-side: a requested redirect page comes back as itself,
+        # containing only "#REDIRECT [[Target]]" (verified against
+        # en.wikipedia.org/wiki/Special:Export/UK, with and without a
+        # &redirects=1 query parameter -- identical response either way).
+        # Resolving one is a second real request for the target title.
+        if not result.exists or result.wikitext is None or hops_remaining <= 0:
+            return result
+        target = _extract_redirect_target(result.wikitext)
+        if target is None:
+            return result
+        logger.debug("following redirect %r -> %r", result.requested_title, target)
+        next_result = self._fetch_single(target, hops_remaining - 1)
+        return FetchResult(
+            requested_title=result.requested_title,
+            exists=next_result.exists,
+            resolved_title=next_result.resolved_title if next_result.exists else None,
+            wikitext=next_result.wikitext,
+            page_id=next_result.page_id,
+            revision_id=next_result.revision_id,
+            revision_timestamp=next_result.revision_timestamp,
+            error=next_result.error,
+        )
 
     @staticmethod
     def _resolve_batch(titles: list[str], page_map: dict[str, _PageInfo]) -> list[FetchResult]:
+        # MediaWiki always returns a page under its own exact title (never a
+        # different one), so exact normalized matching is the only safe
+        # rule here. A prior version paired unmatched requests with
+        # leftover pages by position as a guessed redirect fallback: with
+        # two or more unmatched titles in one batch, that assigns one
+        # page's content to a different, wrong title with no way to tell.
+        # Redirects are instead resolved after the fact by
+        # _follow_redirect, which knows exactly which title it followed.
         pages_in_order = list(page_map.values())
         claimed = [False] * len(pages_in_order)
-        result_by_index: dict[int, FetchResult] = {}
-        unmatched_indices: list[int] = []
+        results: list[FetchResult] = []
 
-        for i, title in enumerate(titles):
+        for title in titles:
             target = _normalize_for_match(title)
             match_pos = next(
                 (
@@ -303,10 +345,19 @@ class Fetcher:
                 ),
                 None,
             )
-            if match_pos is not None:
-                claimed[match_pos] = True
-                page = pages_in_order[match_pos]
-                result_by_index[i] = FetchResult(
+            if match_pos is None:
+                results.append(
+                    FetchResult(
+                        requested_title=title,
+                        exists=False,
+                        error=f"Page not found: {title}",
+                    )
+                )
+                continue
+            claimed[match_pos] = True
+            page = pages_in_order[match_pos]
+            results.append(
+                FetchResult(
                     requested_title=title,
                     exists=True,
                     resolved_title=page["title"],
@@ -315,31 +366,9 @@ class Fetcher:
                     revision_id=page["revision_id"],
                     revision_timestamp=page["revision_timestamp"],
                 )
-            else:
-                unmatched_indices.append(i)
-
-        # Leftover requests paired, in order, with leftover pages: these are
-        # the redirect cases, where the returned title differs from the
-        # request and an exact-match pass above could not find it.
-        leftover_pages = [p for j, p in enumerate(pages_in_order) if not claimed[j]]
-        for i, page in zip(unmatched_indices, leftover_pages, strict=False):
-            result_by_index[i] = FetchResult(
-                requested_title=titles[i],
-                exists=True,
-                resolved_title=page["title"],
-                wikitext=page["wikitext"],
-                page_id=page["page_id"],
-                revision_id=page["revision_id"],
-                revision_timestamp=page["revision_timestamp"],
-            )
-        for i in unmatched_indices[len(leftover_pages) :]:
-            result_by_index[i] = FetchResult(
-                requested_title=titles[i],
-                exists=False,
-                error=f"Page not found: {titles[i]}",
             )
 
-        return [result_by_index[i] for i in range(len(titles))]
+        return results
 
     @staticmethod
     def _parse_export_xml(xml_text: str) -> dict[str, _PageInfo]:
@@ -347,6 +376,15 @@ class Fetcher:
             root = ET.fromstring(xml_text)
         except (ET.ParseError, ValueError) as exc:
             raise ExportParseError(f"invalid export XML: {exc}", raw=xml_text[:500]) from exc
+
+        if _local_name(root.tag) != "mediawiki":
+            # A well-formed but wrong-schema response (an error page, a
+            # maintenance notice) must not be read as "zero pages", which
+            # the caller would otherwise report as every title missing.
+            raise ExportParseError(
+                f"root element is <{root.tag}>, not <mediawiki>: not an export response",
+                raw=xml_text[:500],
+            )
 
         pages: dict[str, _PageInfo] = {}
         for page_el in root:

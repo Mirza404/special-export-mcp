@@ -65,15 +65,29 @@ empty User-Agent, raise `ConfigurationError`. Never send a blank or default
 
 ## 4. Redirects
 
-`Special:Export` does not follow article redirects by default. Add `&redirects=1`
-(path form: query string appended) so `Golf Mk4` resolves to the target page.
+`Special:Export` does not follow article redirects, and no request parameter
+makes it. Corrected 2026-09-06: the original draft of this section claimed
+`&redirects=1` resolves a redirect server-side. Verified live against
+`https://en.wikipedia.org/wiki/Special:Export/UK` (a stable redirect to
+`United Kingdom`): the response is byte-identical with and without that
+parameter. A requested redirect page always comes back **as itself** --
+`<title>UK</title>`, `<text>#REDIRECT [[United Kingdom]]</text>` -- never its
+target's content. Do not add `&redirects=1` to a request; it does nothing.
 
-When a redirect is followed, the returned XML `<page><title>` differs from the
-requested title. Record both:
+Resolving a redirect is therefore a second real request. Detect
+`#REDIRECT [[Target]]` (case-insensitive, optional leading colon) at the
+start of the fetched wikitext, then fetch `Target`. Follow up to
+`MAX_REDIRECT_HOPS` (5) times to bound a redirect chain; stop and return the
+last fetched page as-is if the limit is hit. Record both the original and the
+final title:
 
 ```python
 {"requested_title": "Golf Mk4", "resolved_title": "Volkswagen Golf Mk4"}
 ```
+
+This applies to both the single-title and the batch path. In a batch, a page
+that comes back as a redirect stub gets its own follow-up single-title
+request after the batch response is parsed.
 
 ## 5. Response parsing
 
