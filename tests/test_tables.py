@@ -87,6 +87,22 @@ def test_piped_wikilink_is_not_mistaken_for_an_attribute() -> None:
     assert tables[0].rows == [["[[Straight-four engine|I4]] 16V"]]
 
 
+def test_literal_double_pipe_inside_a_template_does_not_split_the_cell() -> None:
+    # {{...}} is opaque at this tier: its own internal '|' arguments are
+    # never cell separators, so a template that happens to carry a
+    # literal '||' argument must not be split into two cells here.
+    wikitext = """
+{|
+|-
+! A
+|-
+| {{tlx|a||b}} tail
+|}
+"""
+    tables = parse_tables(wikitext)
+    assert tables[0].rows == [["{{tlx|a||b}} tail"]]
+
+
 def test_colspan_repeats_the_value() -> None:
     wikitext = """
 {|
@@ -288,6 +304,17 @@ def test_max_rows_per_table_truncates_and_flags_truncated() -> None:
     tables = parse_tables(wikitext, limits=Limits(max_rows_per_table=2))
     assert tables[0].truncated is True
     assert len(tables[0].rows) == 2
+
+
+def test_max_cells_per_row_bounds_a_header_colspan() -> None:
+    # A header cell's colspan is attacker/author controlled (e.g.
+    # colspan="999999999") and must be bounded the same way a data row's
+    # colspan already is, or one malformed header line can blow past
+    # every size limit before a single data row is even read.
+    wikitext = '{|\n|-\n! colspan="1000" | A\n|-\n| x\n|}'
+    tables = parse_tables(wikitext, limits=Limits(max_cells_per_row=5))
+    assert len(tables[0].headers) == 5
+    assert tables[0].truncated is True
 
 
 def test_max_tables_caps_the_number_returned() -> None:
