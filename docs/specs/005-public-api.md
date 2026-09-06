@@ -77,6 +77,11 @@ optional keys only. Every added key is additive, so the consumer's existing
 }
 ```
 
+`warnings` are part of the data-integrity contract, not optional debugging
+output. A consumer must not persist positionally mapped values from a row with
+`kind="ambiguous_row_alignment"`. It may import the other rows and quarantine
+only the warned one. See [`docs/data-integrity.md`](../data-integrity.md).
+
 Decision to confirm (Tier 8, Q1): `dict` versus dataclass. Proposal: return
 **plain dicts**, because the handoff's stated consumer contract is a dict and
 the MCP layer must serialize to JSON anyway. Ship dataclasses internally and
