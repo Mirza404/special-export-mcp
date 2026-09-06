@@ -193,15 +193,21 @@ def parse_tables(
     return finished
 
 
-def _expand_headers(header_row: list[_RawCell]) -> list[str]:
+def _expand_headers(header_row: list[_RawCell], limits: Limits) -> tuple[list[str], bool]:
     row_map: dict[int, str] = {}
     col_ptr = 0
+    truncated = False
     for cell in header_row:
         for _ in range(max(1, cell.colspan)):
+            if col_ptr >= limits.max_cells_per_row:
+                truncated = True
+                break
             row_map[col_ptr] = cell.content
             col_ptr += 1
+        if truncated:
+            break
     width = max(row_map.keys()) + 1 if row_map else 0
-    return [row_map.get(i, "") for i in range(width)]
+    return [row_map.get(i, "") for i in range(width)], truncated
 
 
 def _build_parsed_table(
@@ -216,7 +222,10 @@ def _build_parsed_table(
     headers: list[str] = []
     data_rows = raw_rows
     if raw_rows and raw_rows[0] and all(c.is_header for c in raw_rows[0]):
-        headers = _expand_headers(raw_rows[0])
+        headers, header_truncated = _expand_headers(raw_rows[0], limits)
+        if header_truncated:
+            truncated = True
+            warnings.append(f"header truncated at max_cells_per_row={limits.max_cells_per_row}")
         data_rows = raw_rows[1:]
 
     pending: dict[int, tuple[str, int]] = {}
