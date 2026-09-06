@@ -119,8 +119,24 @@ def test_empty_user_agent_is_rejected() -> None:
         Fetcher(user_agent="")
 
 
-def test_redirect_resolves_to_a_different_title(mock_session: MagicMock) -> None:
-    mock_session.request.return_value = FakeResponse(_page_xml("Volkswagen Golf Mk4"))
+def _redirect_page_xml(title: str, target: str) -> str:
+    return (
+        '<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/">'
+        f"<page><title>{title}</title><id>1</id>"
+        "<revision><id>10</id><timestamp>2026-09-05T00:00:00Z</timestamp>"
+        f"<text>#REDIRECT [[{target}]]</text></revision></page></mediawiki>"
+    )
+
+
+def test_redirect_is_followed_to_the_real_target(mock_session: MagicMock) -> None:
+    # Special:Export's redirects=1 query parameter is a no-op in practice
+    # (verified against en.wikipedia.org/wiki/Special:Export/UK): a
+    # requested redirect page comes back as itself, containing only
+    # "#REDIRECT [[Target]]". Resolving it takes a second real request.
+    mock_session.request.side_effect = [
+        FakeResponse(_redirect_page_xml("Golf Mk4", "Volkswagen Golf Mk4")),
+        FakeResponse(_page_xml("Volkswagen Golf Mk4")),
+    ]
 
     fetcher = Fetcher(min_request_interval=0)
     result = fetcher.fetch_wikitext("Golf Mk4")
@@ -128,6 +144,85 @@ def test_redirect_resolves_to_a_different_title(mock_session: MagicMock) -> None
     assert result.exists is True
     assert result.requested_title == "Golf Mk4"
     assert result.resolved_title == "Volkswagen Golf Mk4"
+    assert result.wikitext == "wikitext for Volkswagen Golf Mk4"
+    assert mock_session.request.call_count == 2
+
+
+def test_redirect_chain_stops_at_the_hop_limit(mock_session: MagicMock) -> None:
+    # Each hop redirects to the next, forever: without a limit this would
+    # recurse without bound. Every response is a fresh redirect stub, so
+    # the number of requests made is the proof the limit was enforced.
+    mock_session.request.side_effect = lambda *a, **k: FakeResponse(
+        _redirect_page_xml("Whatever", "Next")
+    )
+
+    fetcher = Fetcher(min_request_interval=0)
+    result = fetcher.fetch_wikitext("Start")
+
+    assert result.exists is True
+    assert mock_session.request.call_count == 6  # 1 initial + MAX_REDIRECT_HOPS
+
+
+def test_a_matched_page_that_is_not_a_redirect_is_returned_as_is(
+    mock_session: MagicMock,
+) -> None:
+    mock_session.request.return_value = FakeResponse(_page_xml("Golf"))
+
+    fetcher = Fetcher(min_request_interval=0)
+    result = fetcher.fetch_wikitext("Golf")
+
+    assert result.resolved_title == "Golf"
+    assert mock_session.request.call_count == 1
+
+
+def test_batch_does_not_guess_by_position_for_unmatched_titles(
+    mock_session: MagicMock,
+) -> None:
+    # Only "Skoda Octavia" comes back; "Volkswagen Golf Mk4" is genuinely
+    # missing. A prior version paired unmatched requests with leftover
+    # pages positionally, which would have wrongly assigned Octavia's
+    # content to the Golf Mk4 title here.
+    mock_session.request.return_value = FakeResponse(_page_xml("Skoda Octavia"))
+
+    fetcher = Fetcher(min_request_interval=0)
+    results = fetcher.fetch_many(["Volkswagen Golf Mk4", "Skoda Octavia"])
+
+    assert results[0].exists is False
+    assert results[0].error == "Page not found: Volkswagen Golf Mk4"
+    assert results[1].exists is True
+    assert results[1].wikitext == "wikitext for Skoda Octavia"
+
+
+def test_batch_redirect_is_followed_with_a_followup_request(
+    mock_session: MagicMock,
+) -> None:
+    mock_session.request.side_effect = [
+        FakeResponse(_redirect_page_xml("Golf Mk4", "Volkswagen Golf Mk4")),
+        FakeResponse(_page_xml("Volkswagen Golf Mk4")),
+    ]
+
+    fetcher = Fetcher(min_request_interval=0)
+    results = fetcher.fetch_many(["Golf Mk4"])
+
+    assert results[0].exists is True
+    assert results[0].resolved_title == "Volkswagen Golf Mk4"
+    assert mock_session.request.call_count == 2
+
+
+def test_non_export_xml_response_raises_instead_of_reporting_missing(
+    mock_session: MagicMock,
+) -> None:
+    # A well-formed XML document that is not a mediawiki export (an error
+    # page, a maintenance notice) must not be read as "zero pages", which
+    # the caller would otherwise report as every requested title missing.
+    mock_session.request.return_value = FakeResponse(
+        "<error><info>Not confirmed, blocked, or something else went wrong.</info></error>"
+    )
+
+    fetcher = Fetcher(min_request_interval=0)
+
+    with pytest.raises(ExportParseError):
+        fetcher.fetch_wikitext("Golf")
 
 
 def test_retries_on_503_then_succeeds(mock_session: MagicMock) -> None:
