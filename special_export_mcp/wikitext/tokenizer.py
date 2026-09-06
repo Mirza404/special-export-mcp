@@ -43,13 +43,12 @@ def classify_line(line: str) -> ClassifiedLine:
     return ClassifiedLine(LineKind.OTHER, line)
 
 
-def split_cells(payload: str, separator: str) -> list[str]:
-    """Split one header/data line's payload into raw cell strings."""
-    return payload.split(separator)
-
-
-def find_unnested_pipe(text: str) -> int | None:
-    """Index of the first '|' outside [[...]], {{...}}, <...>, and quotes."""
+def _unnested_mask(text: str) -> list[bool]:
+    """True at index i if that position is outside [[...]], {{...}}, <...>,
+    and a quoted value. Shared by find_unnested_pipe and split_cells so a
+    piped wikilink, or a template argument containing '||' or '!!', is
+    never mistaken for a cell attribute separator or a cell boundary."""
+    mask = [False] * len(text)
     bracket_depth = 0
     brace_depth = 0
     in_angle = False
@@ -59,6 +58,7 @@ def find_unnested_pipe(text: str) -> int | None:
     while i < n:
         ch = text[i]
         two = text[i : i + 2]
+        mask[i] = bracket_depth == 0 and brace_depth == 0 and not in_angle and quote is None
         if quote is not None:
             if ch == quote:
                 quote = None
@@ -92,9 +92,40 @@ def find_unnested_pipe(text: str) -> int | None:
             in_angle = False
             i += 1
             continue
-        if ch == "|" and bracket_depth == 0 and brace_depth == 0 and not in_angle:
-            return i
         i += 1
+    return mask
+
+
+def split_cells(payload: str, separator: str) -> list[str]:
+    """Split one header/data line's payload into raw cell strings.
+
+    Ignores an occurrence of the separator inside [[...]], {{...}},
+    <...>, or a quoted value, so a template argument that happens to
+    contain a literal '||' or '!!' is never split into two cells.
+    """
+    mask = _unnested_mask(payload)
+    parts: list[str] = []
+    start = 0
+    i = 0
+    n = len(payload)
+    sep_len = len(separator)
+    while i <= n - sep_len:
+        if mask[i] and payload[i : i + sep_len] == separator:
+            parts.append(payload[start:i])
+            i += sep_len
+            start = i
+            continue
+        i += 1
+    parts.append(payload[start:])
+    return parts
+
+
+def find_unnested_pipe(text: str) -> int | None:
+    """Index of the first '|' outside [[...]], {{...}}, <...>, and quotes."""
+    mask = _unnested_mask(text)
+    for i, ch in enumerate(text):
+        if ch == "|" and mask[i]:
+            return i
     return None
 
 
