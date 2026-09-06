@@ -6,6 +6,15 @@ Standalone MCP server. Fetches Wikipedia page wikitext through
 Status: under construction. See [docs/specs](docs/specs/README.md) for the
 full design.
 
+## Data integrity
+
+Wikipedia can contain structurally broken tables. Results therefore carry
+machine-readable `warnings`; consumers and AI agents must inspect them before
+persisting positional row data. Ambiguous rows are returned as evidence but
+must be quarantined rather than silently corrected. See
+[Data integrity and recovery](docs/data-integrity.md) for the required fallback
+policy and the known Golf Mk4 example.
+
 ## Install
 
 Not published to PyPI. Install from git:

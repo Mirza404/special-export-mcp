@@ -150,6 +150,25 @@ is longer than the header list — widen instead, and pad `headers` with `""`.
 Rationale: a consumer indexing `row[3]` for "Power" must not hit `IndexError`
 on a malformed article.
 
+### 3.1 Ambiguous row alignment
+
+Rectangular padding prevents an `IndexError`; it does not prove that authored
+values occupy the correct semantic columns. When a data row occupies fewer
+columns than the final table width after `rowspan` and `colspan` expansion,
+append a structured `ambiguous_row_alignment` warning to the table.
+
+The warning contains `table_index`, `row`, `expected_columns`,
+`occupied_columns`, `source_cells`, and `values`. Its reason must state that a
+missing cell is not necessarily trailing and positional values may therefore
+be shifted. Keep the padded row in `rows` as evidence. Do not guess where the
+missing cell belongs.
+
+Consumers must quarantine a warned row before mapping cells to named fields.
+An interactive AI may recover explicitly labelled facts from the evidence or
+inspect raw wikitext, but uncertain fields remain missing. The binding recovery
+policy and the Golf Mk4 example are in
+[`docs/data-integrity.md`](../data-integrity.md).
+
 ## 4. Bounds
 
 Copy the spirit of the `wikipedia-mcp` fork's limits, so one pathological
@@ -188,3 +207,5 @@ Against `tests/fixtures/volkswagen_golf_mk4.xml`:
    column, carried down by the `rowspan="2"` on the row above.
 5. The row after `rowspan = "2" | 1598 cc` (spaces around `=`) carries `1598 cc`.
 6. No row in the output has zero cells, despite the doubled `|-`.
+7. The Golf Mk4 `AUQ/AWP` row carries an `ambiguous_row_alignment` warning
+   identifying 6 occupied columns against the 7-column table width.
