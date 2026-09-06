@@ -266,9 +266,12 @@ Cell-level unit tests against real fixture strings:
 6. `1.8 [[Turbocharger|T]]` -> `1.8 T`
 7. A cell containing `<ref>...</ref>` loses the whole ref, keeps the rest.
 8. `{{convert|abc|kW}}` produces one `unknown_template` warning and `""`.
-9. Regex `(\d+)\s*kW` matches every power cell in the fixture's engine table.
+9. Regex `(\d+)\s*kW` matches every non-empty, structurally unambiguous power
+   cell in the fixture's engine table.
 10. `{{cvt|115|PS|kW PS hp|0|order=out}}` -> `115 PS (85 kW)`. Cross-checked
     against Wikipedia's own rendering of that template, "85 kW (115 PS; 113 hp)".
 11. `{{convert|150|hp|kW}}` -> `150 hp (112 kW)`.
-12. Every power cell in the fixture's engine table yields a kW figure, whether
-    authored in kW or in PS.
+12. Every structurally unambiguous power cell in the fixture's engine table
+    yields a kW figure, whether authored in kW or in PS. The known `AUQ/AWP`
+    source defect is selected through Tier 2's machine-readable alignment
+    warning, never through a hard-coded article/model exception.
