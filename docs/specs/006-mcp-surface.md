@@ -40,6 +40,14 @@ CLI flags map one to one onto `SpecialExportClient` constructor arguments.
 
 Returns the Tier 5 dict, JSON-serialized.
 
+The tool description shown to the model must explicitly say that `warnings`
+are data-quality controls. On `ambiguous_row_alignment`, the model must not
+trust positional field assignments or silently repair the row. It may recover
+only explicitly labelled facts from the returned evidence, call `get_wikitext`
+for nearby raw source, or inspect the cited page as a bounded fallback. Anything
+still inferred stays `null` or pending review, with recovery provenance. This
+requirement is specified in [`docs/data-integrity.md`](../data-integrity.md).
+
 `section_filter` is an optional case-insensitive substring matched against the
 table's `section` breadcrumb. `"engines"` returns only engine tables from a
 multi-generation article. This exists because a full car article can return many
